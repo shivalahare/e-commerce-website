@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your Cart</h1>
+<form id="cart-form" method="post" action="{% url 'cart_detail' %}">
+    {% csrf_token %}
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            {% for item in items %}
+            <tr data-item-id="{{ item.id }}">
+                <td>{{ item.product.name }}</td>
+                <td>${{ item.product.price }}</td>
+                <td>
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" 
+                           data-item-id="{{ item.id }}" class="quantity-input">
+                </td>
+                <td class="item-total-price">${{ item.get_total_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total Cart Price: $<span id="cart-total-price">{{ cart_total_price }}</span></p>
+    <button type="submit" name="checkout">Checkout</button>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('cart-form');
+    const cartItems = document.getElementById('cart-items');
+    
+    form.addEventListener('input', function(event) {
+        if (event.target.matches('.quantity-input')) {
+            const itemId = event.target.getAttribute('data-item-id');
+            const quantity = event.target.value;
+
+            fetch("{% url 'cart_detail' %}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: new URLSearchParams({
+                    'update_cart': 'true',
+                    'item_id': itemId,
+                    'quantity': quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const itemTotalPrice = parseFloat(data.item_total_price);
+                const cartTotalPrice = parseFloat(data.cart_total_price);
+
+                if (!isNaN(itemTotalPrice) && !isNaN(cartTotalPrice)) {
+                    const row = cartItems.querySelector(`tr[data-item-id="${itemId}"]`);
+                    row.querySelector('.item-total-price').textContent = `$${itemTotalPrice.toFixed(2)}`;
+
+                    // Update total cart price
+                    document.getElementById('cart-total-price').textContent = `$${cartTotalPrice.toFixed(2)}`;
+                } else {
+                    console.error('Invalid total price values:', data);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    });
+});
+</script>
+{% endblock %}
