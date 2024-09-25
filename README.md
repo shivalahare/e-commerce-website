@@ -20,7 +20,7 @@ git clone https://github.com/shivalahare/e-commerce-website.git
 Navigate to the project directory:
 
 ```bash
-cd e-commerce-website
+cd shop_platform
 ```
 
 ### 2. Set Up a Virtual Environment
