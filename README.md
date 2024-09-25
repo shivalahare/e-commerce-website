@@ -1,55 +1,112 @@
-# e-commerce-website
+
+# E-Commerce Website
 
 This is a Django-based e-commerce website.
 
 ## Installation
 
-### Create a Virtual Environment
+### Prerequisites
 
-For Ubuntu/Linux:
-1. Install the virtual environment package:
-   `sudo apt install python3-venv`
-   
+- Python 3.x
+- Git
+- pip (Python package installer)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/shivalahare/e-commerce-website.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd e-commerce-website
+```
+
+### 2. Set Up a Virtual Environment
+
+It's recommended to use a virtual environment to manage project dependencies.
+
+#### For Ubuntu/Linux:
+
+1. Install `python3-venv` if not installed:
+
+   ```bash
+   sudo apt install python3-venv
+   ```
+
 2. Create a virtual environment:
-   `python3 -m venv venv`
 
-For Windows:
-1. Install `virtualenv`:
-   `python -m pip install --user virtualenv`
-   
+   ```bash
+   python3 -m venv venv
+   ```
+
+3. Activate the virtual environment:
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+#### For Windows:
+
+1. Install `virtualenv` if not installed:
+
+   ```bash
+   python -m pip install --user virtualenv
+   ```
+
 2. Create a virtual environment:
-   `python -m venv venv`
 
-### Activate the Virtual Environment
+   ```bash
+   python -m venv venv
+   ```
 
-For Ubuntu/Linux:
-   `source venv/bin/activate`
+3. Activate the virtual environment:
 
-For Windows:
-   `venv\Scripts\activate`
+   ```bash
+   venv\Scripts\activate
+   ```
 
-### Clone the Repository
-   `git clone https://github.com/shivalahare/e-commerce-website.git`
+### 3. Install Dependencies
 
-### Navigate to the project directory
-   `cd e-commerce-website`
+Once the virtual environment is activated, install the project dependencies:
 
-### Install dependencies
-   `pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
-### Migrate the Database
+### 4. Set Up the Database
 
 1. Create migrations:
-   `python manage.py makemigrations`
-   
-2. Apply migrations:
-   `python manage.py migrate`
 
-### Run the Development Server
-   `python manage.py runserver`
+   ```bash
+   python manage.py makemigrations
+   ```
+
+2. Apply the migrations:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+### 5. Run the Development Server
+
+Start the Django development server:
+
+```bash
+python manage.py runserver
+```
+
+You can now access the application at `http://127.0.0.1:8000/`.
+
+---
 
 ## Usage
-   Access the application at `http://127.0.0.1:8000/`.
+
+Once the server is running, visit the website in your browser at `http://127.0.0.1:8000/` to browse products, create an account, add items to your shopping cart, and complete purchases.
+
+---
 
 ## License
-   This project is licensed under the MIT License.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
