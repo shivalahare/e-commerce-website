@@ -6,9 +6,11 @@ This is a Django-based e-commerce-website.
 
 ### Create a Virtual Environment
 ####  For Ubuntu/Linux:
+      
       ```bash
       sudo apt install python3-venv
 ####  For Windows:
+      
       ```bash
       python -m pip install --user virtualenv
 
