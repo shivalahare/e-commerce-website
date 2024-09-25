@@ -1,70 +1,55 @@
 # e-commerce-website
 
-This is a Django-based e-commerce-website.
+This is a Django-based e-commerce website.
 
 ## Installation
 
 ### Create a Virtual Environment
-####  For Ubuntu/Linux:
-      
-      ```bash
-       sudo apt install python3-venv
-####  For Windows:
-      
-      ```bash
-       python -m pip install --user virtualenv
 
-### Set up the Virtual Environment:
-#### For Ubuntu/Linux:
-   ```bash
-   python3 -m venv venv
-5. For Windows:
-   ```bash
-   python -m venv venv
-
-5. Activate the Virtual Environment:
-   For Ubuntu/Linux:
-
-   ```bash
-   source venv/bin/activate
+For Ubuntu/Linux:
+1. Install the virtual environment package:
+   `sudo apt install python3-venv`
    
-   For Windows:
+2. Create a virtual environment:
+   `python3 -m venv venv`
 
-   ```bash
-   venv\Scripts\activate
+For Windows:
+1. Install `virtualenv`:
+   `python -m pip install --user virtualenv`
    
-7. Clone the repository:
+2. Create a virtual environment:
+   `python -m venv venv`
 
-   ```bash
-   git clone https://github.com/shivalahare/e-commerce-website.git
-    
-9. Navigate to the project directory:
+### Activate the Virtual Environment
 
-   ```bash
-   cd shop_platform
-    
-11. Install dependencies:
+For Ubuntu/Linux:
+   `source venv/bin/activate`
 
-    ```bash
-    pip install -r requirements.txt
-    
-13. Migrate Database:
+For Windows:
+   `venv\Scripts\activate`
 
-    ```bash
-    python manage.py makemigrations
-    
-15. Apply migrations:
+### Clone the Repository
+   `git clone https://github.com/shivalahare/e-commerce-website.git`
 
-    ```bash
-    python manage.py migrate
-    
-17. Run the development server:
+### Navigate to the project directory
+   `cd e-commerce-website`
 
-    ```bash
-    python manage.py runserver
-    
+### Install dependencies
+   `pip install -r requirements.txt`
+
+### Migrate the Database
+
+1. Create migrations:
+   `python manage.py makemigrations`
+   
+2. Apply migrations:
+   `python manage.py migrate`
+
+### Run the Development Server
+   `python manage.py runserver`
+
 ## Usage
-    Access the application at http://127.0.0.1:8000/.
+   Access the application at `http://127.0.0.1:8000/`.
 
 ## License
-    This project is licensed under the MIT License.
+   This project is licensed under the MIT License.
