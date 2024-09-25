@@ -15,7 +15,7 @@ This is a Django-based e-commerce-website.
       python -m pip install --user virtualenv
 
 ### Set up the Virtual Environment:
-4. For Ubuntu/Linux:
+#### For Ubuntu/Linux:
    ```bash
    python3 -m venv venv
 5. For Windows:
