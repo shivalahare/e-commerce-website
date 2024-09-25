@@ -10,7 +10,7 @@ This is a Django-based e-commerce-website.
     
 2. Navigate to the project directory:
     ```bash
-    cd task_management
+    cd shop_platform
 3. Install dependencies:
     ```bash
     pip install -r requirements.txt
