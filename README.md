@@ -5,10 +5,10 @@ This is a Django-based e-commerce-website.
 ## Installation
 
 ### Create a Virtual Environment
-1. For Ubuntu/Linux:
+   For Ubuntu/Linux:
    ```bash
    sudo apt install python3-venv
-2. For Windows:
+   For Windows:
    ```bash
    python -m pip install --user virtualenv
 
